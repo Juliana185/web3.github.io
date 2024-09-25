@@ -95,20 +95,20 @@ footer{
 /* Стили для мобильных устройств */
 @media (max-width: 768px) {
     .container {
-        flex-direction: column; /* Упорядочить элементы вертикально */
+        flex-direction: column; 
     }
 
     .sidebar {
-      width: 100%; /* Боковая панель занимает всю ширину */
-      order: 1; /* Поменять порядок отображения */
+      width: 100%;
+      order: 1;
 }
 
 main {
-  width: 100%; /* Основной контент также занимает всю ширину */
-  order: 2; /* Поменять порядок отображения */
+  width: 100%;
+  order: 2;
 }
 
 nav ul li {
-  display: block; /* Ссылки в навигации отображаются вертикально */
+  display: block;
 }
 }
