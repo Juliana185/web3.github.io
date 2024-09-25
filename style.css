@@ -1,67 +1,105 @@
-* {
-    box-sizing: border-box;
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-body {
-    font-family: Arial, sans-serif;
-}
-
-header, nav, main, footer {
-    width: 100%;
-    padding: 10px;
-}
-
-.menu {
+.container {
     display: flex;
-    flex-direction: column; /* Вертикальный список для мобильных */
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.menu li {
-    list-style: none;
-}
-
-.menu a {
-    text-decoration: none;
-    padding: 10px;
-    background-color: #007bff;
+header {
+    background-color: #0a80c4;
     color: white;
-    display: block;
-    margin-bottom: 5px;
+    padding: 20px 0;
 }
 
-.content-table {
+.logo {
+    max-width: 150px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #ccf4fc;
+    padding: 15px;
+}
+
+main {
+    width: 75%;
+    padding: 15px;
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 20px;
 }
 
-.content-table th, .content-table td {
-    border: 1px solid #ccc;
+th, td {
+    border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
 }
 
-/* Адаптивные стили для больших экранов */
-@media (min-width: 768px) {
-    .menu {
-        flex-direction: row; /* Горизонтальное меню для больших экранов */
+th {
+    background-color: #f2f2f2;
+}
+
+.odd {
+    background-color: #f9f9f9;
+}
+
+.even {
+    background-color: #ffffff;
+}
+
+footer{
+  background-color: #0a80c4;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+}
+
+/* Стили для мобильных устройств */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Упорядочить элементы вертикально */
     }
 
-    .menu li {
-        margin-right: 10px; /* Отступ между ссылками */
-    }
+    .sidebar {
+      width: 100%; /* Боковая панель занимает всю ширину */
+      order: 1; /* Поменять порядок отображения */
+}
 
-    main {
-        display: flex;
-        flex-direction: column-reverse; /* Меняем порядок элементов на больших экранах */
-    }
+main {
+  width: 100%; /* Основной контент также занимает всю ширину */
+  order: 2; /* Поменять порядок отображения */
+}
 
-    table {
-        order: 1; /* Таблица выше списка на больших экранах */
-    }
-
-    nav {
-        order: 2; /* Меню ниже таблицы на больших экранах */
-    }
+nav ul li {
+  display: block; /* Ссылки в навигации отображаются вертикально */
+  margin-bottom: 10px; /* Отступ между ссылками */
+}
 }
