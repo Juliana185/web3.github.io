@@ -49,6 +49,16 @@ main {
 
 h1 {
     text-align: center;
+    color: black;
+    font-size: 25px;
+    font-style: normal;
+}
+
+h3 {
+    text-align: center;
+    color: black;
+    font-size: 25px;
+    font-style: normal;
 }
 
 table {
@@ -100,6 +110,5 @@ main {
 
 nav ul li {
   display: block; /* Ссылки в навигации отображаются вертикально */
-  margin-bottom: 10px; /* Отступ между ссылками */
 }
 }
