@@ -4,7 +4,7 @@ body {
     padding: 0;
 }
 
-.container {
+.contain {
     max-width: 960px;
     margin: auto;
     padding: 10px;
@@ -68,48 +68,95 @@ footer {
     padding: 10px 0;
 }
 
-/* Стили для мобильных устройств */
+
+.container {
+    display: flex;
+    flex-direction: column; /* По умолчанию для мобильных устройств */
+}
+
+.table {
+    order: 2; /* Порядок для таблицы */
+}
+
+.form {
+    order: 3; /* Порядок для формы */
+}
+.list {
+  order: 1;
+}
+
+
+/* для мобильных устройств */
+@media (min-width: 768px){
+  .sidebar{
+    visibility: hidden;
+    display: none;
+  }
+}
+
+
 @media (max-width: 768px) {
+  .logo {
+      float: left;
+      margin: 5px;
+      width: auto;
+      height: 80px;
+
+  }
+
     .content {
-        flex-direction: column; /* Изменяем направление на вертикальное */
+        flex-direction: column;
     }
 
     .sidebar,
     .main {
-        width: 100%; /* Ширина элементов становится 100% */
-        padding: 10px 0; /* Добавляем отступ сверху и снизу */
+        width: 100%;
+        padding: 10px 0;
     }
 
     nav {
-        display: flex;
-        flex-direction: column; /* Переключаем навигацию на вертикальную */
-        align-items: center; /* Центрируем элементы навигации */
+      visibility: hidden;
+      display: none;
     }
 
     nav a {
-        margin: 5px 0; /* Уменьшаем отступы между ссылками */
+        margin: 5px 0;
     }
 
-    /* Стили для сайдбара */
-        .sidebar {
-            width: 250px;
-            background-color: #6e7cff;
-            color: white;
-            padding: 20px;
-        }
+    .sidebar {
+        width: 250px;
+        background-color: #6e7cff;
+        color: white;
+        padding: 20px;
+    }
 
-        .sidebar h2 {
-            margin-top: 0;
-        }
+    .sidebar h2 {
+        margin-top: 0;
+    }
 
-        .sidebar a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            padding: 10px 0;
-        }
+    .sidebar a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        padding: 10px 0;
+    }
 
-        .sidebar a:hover {
-            background-color: #34495e;
-        }
+    .sidebar a:hover {
+        background-color: #34495e;
+    }
+
+    .container {
+        flex-direction: column; /* Или row, если хотите горизонтально */
+    }
+
+    .table {
+        order: 2; /* Теперь таблица идет после формы */
+    }
+
+    .form {
+        order: 1; /* Форма идет первой */
+    }
+    .list{
+      order: 3;
+    }
 }
